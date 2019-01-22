@@ -12,12 +12,12 @@ public class MyServlet extends HttpServlet {
 
         if (request.getParameter("login").equals("admin")){
             if (request.getParameter("password").equals("admin")){
-                out.print("Login successfull");
+                out.print("Welcome!");
             } else {
-                out.print("Wrong password");
+                throw new ServletException("Wrong password");
             }
         } else {
-            out.print("Wrong login");
+            throw new ServletException("Wrong login");
         }
         out.close();
     }
